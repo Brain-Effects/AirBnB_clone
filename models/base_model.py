@@ -34,6 +34,9 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            from models.engine.file_storage import FileStorage
+            storage = FileStorage()
+            storage.new(self)
 
     def __str__(self):
         """
@@ -47,6 +50,9 @@ class BaseModel:
         Update the updated_at attribute with the current datetime
         """
         self.updated_at = datetime.now()
+        from models.engine.file_storage import FileStorage
+        storage = FileStorage()
+        storage.save()
 
     def to_dict(self):
         """
