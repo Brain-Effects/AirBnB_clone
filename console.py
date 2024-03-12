@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import cmd
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
@@ -18,6 +19,8 @@ class HBNBCommand(cmd.Cmd):
         """
         EOF command to exit the program
         """
+        if sys.stdin.isatty():
+            print()
         return True
 
     def emptyline(self):
