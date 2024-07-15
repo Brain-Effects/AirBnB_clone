@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines the HBNBCommand class, which is a command interpreter
+for managing AirBnB objects.
+"""
 import cmd
 
 
